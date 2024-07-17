@@ -1,13 +1,13 @@
 package ru.practicum.dinner;
+
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class DinnerConstructor {
     Random random = new Random();
     HashMap<String, ArrayList<String>> dishList = new HashMap<>();
-    ArrayList<String> selectedTypes = new ArrayList<>();
+   /* ArrayList<String> selectedTypes = new ArrayList<>();*/
 
     public void addDish(String dishType, String dish) {
         if (checkType(dishType)) {
@@ -24,14 +24,10 @@ public class DinnerConstructor {
         return dishList.containsKey(type);
     }
 
-    public void comboGenerator (int numberOfCombos) {
-       /* if (numberOfCombos > dishList.size())*/
+    public void comboGenerator(ArrayList<String> selectedTypes, int numberOfCombos) {
         HashMap<Integer, ArrayList<String>> dishesCombo = new HashMap<>();
-
-
         for (int i = 0; i < numberOfCombos; i++) {
             ArrayList<String> dishesInCombo = new ArrayList<>();
-
             for (String type : selectedTypes) {
                 ArrayList<String> dishesInType = dishList.get(type);
                 String randomDish = dishesInType.get(random.nextInt(dishesInType.size()));
@@ -40,8 +36,6 @@ public class DinnerConstructor {
             dishesCombo.put(i, dishesInCombo);
             System.out.println("Комбо " + (i + 1));
             System.out.println(dishesCombo.get(i));
-
         }
-
     }
 }
