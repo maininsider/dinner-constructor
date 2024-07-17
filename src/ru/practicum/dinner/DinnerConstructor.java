@@ -35,6 +35,6 @@ public class DinnerConstructor {
             dishesCombo.put(i, dishesInCombo);
             System.out.println("Комбо " + (i + 1));
             System.out.println(dishesCombo.get(i));
-        }////
+        }
     }
 }
