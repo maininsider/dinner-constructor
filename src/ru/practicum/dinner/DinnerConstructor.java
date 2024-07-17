@@ -7,7 +7,6 @@ import java.util.HashMap;
 public class DinnerConstructor {
     Random random = new Random();
     HashMap<String, ArrayList<String>> dishList = new HashMap<>();
-   /* ArrayList<String> selectedTypes = new ArrayList<>();*/
 
     public void addDish(String dishType, String dish) {
         if (checkType(dishType)) {
